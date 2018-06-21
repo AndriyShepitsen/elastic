@@ -1,0 +1,13 @@
+---
+keypair: mark-feyman
+instance_type: t2.medium
+security_group_elastic: realsiter-elastic
+image: ami-a9d276c9
+region: us-west-2
+vpc_id: vpc-7269ac16
+vpc_subnet: subnet-f1468a95
+name_tag_elastic: elastic
+aws_access_key:  AKIAJ5JBIBJ6NODMVT3A
+aws_secret_key: bcYtluhdKC3LhqWl1aJxnLqVAQcpPH/24btC/
+
+
