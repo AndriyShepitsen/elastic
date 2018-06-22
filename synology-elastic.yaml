@@ -14,6 +14,10 @@
   vars:
     es_instance_name: "realsiter"
     es_enable_xpack: false
+    cassandra_version: 3.7.0
+    cassandra_cluster_name: realsiter-cassandra
   roles:
-#  - elastic.elasticsearch
+  - mrlesmithjr.oracle-java8
+  - elastic.elasticsearch
+  - wunzeco.cassandra
   - synology-elastic

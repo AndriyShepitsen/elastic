@@ -1,7 +1,4 @@
 ---
-# - include: console.yml
 # - include: update-pkgs.yml
-# - include: config-elastic.yml
-# - include: install-haproxy.yml
-# - include: copy-elastic-search-data.yml
+ - include: install-haproxy.yml
 
