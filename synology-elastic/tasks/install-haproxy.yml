@@ -5,8 +5,8 @@
    state: present
 
 - name: copy haproxy config
-  copy:
-   src: haproxy.cfg
+  template:
+   src: haproxy.j2
    dest: /etc/haproxy/haproxy.cfg
 
 - name: restart haproxy

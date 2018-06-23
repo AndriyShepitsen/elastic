@@ -35,13 +35,14 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 listen elastic
-	bind 192.168.1.160:9200
+	bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:9200
 	mode http
 	option forwardfor
 	server elastic 127.0.0.1:9200 check
 
+
 listen cassandra
-	bind 0.0.0.0:9044
+	bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:9042
 	mode http
 	option forwardfor
 	server elastic 127.0.0.1:9042 check
