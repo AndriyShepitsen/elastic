@@ -1,0 +1,6 @@
+UUID=8d58ed82-797d-11e8-b316-02113221e997 / ext4 defaults 0 0
+/swap.img	none	swap	sw	0	0
+//192.168.1.195/archive/elastic /media/elastic cifs credentials=/root/.cifscredentials,iocharset=utf8,sec=ntlm,vers=1.0
+//192.168.1.195/images /media/images cifs credentials=/root/.cifscredentials,iocharset=utf8,sec=ntlm,vers=1.0
+
+

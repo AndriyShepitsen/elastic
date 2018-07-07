@@ -1,0 +1,37 @@
+---
+- name: Mount Images Shares Permanently
+  apt:
+   pkg: cifs-utils
+   state: present
+
+- name: Create Elastic directory for snapshots
+  file:
+    path: /media/elastic
+    state: directory
+    owner: 'root'
+    group: 'root'
+
+- name: Create Images directory
+  file:
+    path: /media/images
+    state: directory
+    owner: 'root'
+    group: 'root'
+
+- name: Mount shared folders
+  shell: | sudo mount -a
+
+
+- name: config fstab
+  synchronize:
+      src: fstab
+      dest: /etc
+      owner: yes
+      rsync_opts:
+        - "--no-motd"
+
+
+
+
+
+

@@ -1,3 +1,4 @@
 http.port: 9200
+cluster.name: realsiter
 
-xpack.security.enabled: false
+path.repo: ["/media/elastic"]

@@ -43,6 +43,6 @@ listen elastic
 
 listen cassandra
 	bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:9042
-	mode http
-	option forwardfor
-	server elastic 127.0.0.1:9042 check
+	mode tcp
+	option tcplog
+	server cassandra 127.0.0.1:9042 check

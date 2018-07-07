@@ -1,7 +1,7 @@
 ---
 #- name: Install Ansible pre-requisites
 #  hosts: synology
-#  become_user: andriy
+#  become_user: root
 #  gather_facts: false
 #  tasks:
 #  - name: install python 2
@@ -20,6 +20,6 @@
     cassandra_cluster_name: realsiter-cassandra
   roles:
 #  - mrlesmithjr.oracle-java8
-#  - elastic.elasticsearch
+#  - opsta.elasticsearch
 #  - wunzeco.cassandra
   - synology-elastic

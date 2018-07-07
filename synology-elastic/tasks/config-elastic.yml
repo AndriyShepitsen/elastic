@@ -4,6 +4,9 @@
    src: elasticsearch.yml
    dest: /etc/elasticsearch/elasticsearch.yml
 #
+- name: clean elastic
+  shell: sudo update-rc.d elasticsearch defaults 95 10
+
 #- name: clean elastic
 #  shell: /bin/rm -rf /var/lib/elasticsearch/*
 
