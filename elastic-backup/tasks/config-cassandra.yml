@@ -1,0 +1,14 @@
+---
+- name: config cassandra
+  copy:
+   src: cassandra.yaml
+   dest: /etc/cassandra/cassandra.yaml
+
+
+- name: restart cassandra
+  service:
+   name: cassandra
+   enabled: yes
+   state: restarted
+
+

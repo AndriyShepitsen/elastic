@@ -1,0 +1,32 @@
+---
+- name: config elastic search
+  copy:
+   src: elasticsearch.yml
+   dest: /etc/elasticsearch/elasticsearch.yml
+#
+- name: clean elastic
+  shell: sudo update-rc.d elasticsearch defaults 95 10
+
+- name: clean elastic
+  shell: /bin/rm -rf /var/lib/elasticsearch/*
+
+- name: Copy Data to elastic search
+  copy:
+   src: elasticsearch.7z
+   dest: /var/lib
+
+- name: Install 7z
+  apt:
+   pkg: p7zip-full
+   state: present
+
+- name: Unarchive
+  shell: 7z x /var/lib/elasticsearch.7z -y
+
+- name: restart elastic search
+  service:
+   name: elasticsearch
+   enabled: yes
+   state: restarted
+
+

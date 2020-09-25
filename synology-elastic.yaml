@@ -1,19 +1,20 @@
 ---
-#- name: Install Ansible pre-requisites
-#  hosts: synology
-#  become_user: root
-#  gather_facts: false
-#  tasks:
-#  - name: install python 2
-#    raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
+- name: Install Ansible pre-requisites
+  hosts: source
+  become_user: andriy
+  gather_facts: false
+  tasks:
+  - name: install python 2
+    raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
 
 - name: Install elasticsearch on synology
-  hosts: synology
+  hosts: source
   become: true
   tasks:
    - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
-  become_user: root
+  become_user: andriy
   vars:
+    elasticsearch_major_version: 5
     es_instance_name: "realsiter"
     es_enable_xpack: false
     cassandra_version: 3.7.0
@@ -21,5 +22,5 @@
   roles:
 #  - mrlesmithjr.oracle-java8
 #  - opsta.elasticsearch
-#  - wunzeco.cassandra
-  - synology-elastic
+#  - synology-elastic
+  - elastic-backup

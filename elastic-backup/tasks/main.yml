@@ -1,6 +1,6 @@
 ---
 # - include: update-pkgs.yml
- - include: copy-elastic-directory.yml
+ - include:  copy-elastic-data.yml
 # - include: config-mount-images.yml
 # - include: config-cassandra.yml
 # - include: install-haproxy.yml
