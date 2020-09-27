@@ -1,11 +1,11 @@
 ---
 - name: Create directory
-  file: path=/home/ubuntu/elasticsearch-copy state=directory mode=0777
+  file: path=/media/images/elasticsearch-copy state=directory mode=0777
 
 - name: Copy elastic search data
   copy:
    src: /var/lib/elasticsearch
-   dest: /home/ubuntu/elasticsearch-copy
+   dest: /media/images/elasticsearch-backup
 
 
 

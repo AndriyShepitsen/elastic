@@ -1,11 +1,13 @@
 ---
-- name: Install Ansible pre-requisites
-  hosts: source
-  become_user: andriy
-  gather_facts: false
-  tasks:
-  - name: install python 2
-    raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
+#- name: Install Ansible pre-requisites
+#  hosts: source
+#  become_user: andriy
+#  gather_facts: false
+#  tasks:
+#  - name: install python 2
+#    raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
+
+    # ssh-copy-id  andriy@192.168.1.8 before it's possible to connect with ansible
 
 - name: Install elasticsearch on synology
   hosts: source
@@ -23,4 +25,5 @@
 #  - mrlesmithjr.oracle-java8
 #  - opsta.elasticsearch
 #  - synology-elastic
+
   - elastic-backup
